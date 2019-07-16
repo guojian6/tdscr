@@ -33,6 +33,7 @@ void Init_ADC()
 {
   	//DDRF = 0;
   	//PORTF = 0;
+  	  	//PORTF = 0;
   	ADCSRA = 0X00;
   	adc_mux = 0;
   	ADMUX = (1<<REFS0)|(adc_mux&0x0f);//参考电压AVCC，通道０
