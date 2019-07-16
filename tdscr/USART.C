@@ -1,0 +1,147 @@
+/************************************************************
+ * Copyright (c) 2004-2005, POWERCOM Co., All Rights Reserved.
+ * File        :"usart.c"
+ * Description :
+
+ * Author      : Xu Hailun
+ * Date        : 2004-09-01
+ * Version     : 1.0
+ * Revisions   :
+ *
+ * Revision 1.0.01  2004-10-08 9:01:59  xhl
+ *	 add RS485 function
+ *
+ ************************************************************/
+#include "def.h"
+#include "all.h"
+
+
+uchar rx_state,rev_count;
+uint uiRtn_ch;
+
+void Enable_RS485(uchar op)
+{
+	        //DDRD = 0xfd;
+//		if(op)	PORTD |= 0x80;
+//		else	PORTD &= 0x7f;
+
+    if(op)	PORTD |= 0x10;
+		else	PORTD &= 0xEf;
+
+}
+/*
+void Enable_RS485(uchar op)
+{
+   	DDRD  = 0xf9;
+	if(op==0){//Ω” ’
+		PORTD &= 0x7f;
+	}
+	else{//∑¢ÀÕ
+		PORTD |= 0x80;
+	}
+
+}
+*/
+void USART_Init()
+{
+	UCSRB = 0x00; //disable while setting baud rate
+ 	UCSRA = 0x00;
+	UCSRC = 0x06;//8,n,1
+	//UBRRL = 0x17;//((FOSC/16)/BAUD-1)%256; 0x17@9600
+	UBRRL = 0x0b;//((FOSC/16)/BAUD-1)%256; 0x17@19200
+	UBRRH = 0;//((FOSC/16)/BAUD-1)/256;
+	UCSRB = 0x98;//enable receive intterrupte
+	Enable_RS485(0);
+	rev_count = rx_state = rbr = rbw = 0;
+	uiRtn_ch = 0;
+}
+
+__flash uchar ally_2_table[] = 
+{
+	0x00,0x01,0x10,0x11,0x02,0x03,0x12,0x13,
+	0x20,0x21,0x30,0x31,0x22,0x23,0x32,0x33
+};
+
+uchar byte_combine(uchar hh, uchar ll)
+{
+	uchar i;
+	i = (hh << 1) & 0xaa | ll & 0x55;     
+	return (ally_2_table[i >> 4] << 2) | ally_2_table[i & 0x0f];								
+       
+}
+
+//#pragma interrupt_handler Serial_Int:12
+
+#pragma vector = USART_RXC_vect
+__interrupt void uart_rxc_isr()
+{//uart has received a character in UDR
+	uchar in;
+	if(chkbit(UCSRA,RXC)){
+		in = UDR;
+		if(rx_state > 1) return;
+		if(in == SYNCB){
+			if(rx_state == 1){
+				if (rbw < 5)
+					rbw = 0;
+				else
+					rx_state = 2;
+			}
+			else {
+				rbw = 0;
+				rx_state = 1;
+			}
+		}
+		uiRtn_ch = (uiRtn_ch<<8) + in;
+		if(uiRtn_ch == 0x5E5D)
+			rvb[rbw++] = 0x5E;
+		else if(uiRtn_ch == 0x5E4D)
+			rvb[rbw++] = 0x4E;
+		else {
+			if(in != 0x5E)
+				rvb[rbw++] = in;
+		}	
+		rev_count = 0;
+		if(rbw >= MAX_RVBLEN){
+			rbw = 0;
+			rx_state = 0;
+		}
+	}
+}
+
+/*uchar tx_state;
+void USART_Send()
+{
+	switch(tx_state){
+		case 0:
+			if((own.sendflag)&&(sbr!=sbw)) tx_state = 1;
+			break;
+		case 1:
+			if(sbr!=sbw){
+				if(chkbit(UCSRA,UDRE)){
+			        	UDR = sdb[sbr++];
+					if(sbr>=MAX_SDBLEN) sbr = 0;
+					//UDR0 = sdb[sbr];
+					//sbr = (sbr+1)%MAX_SDBLEN;
+				}
+			}
+			else tx_state = 2;
+			break;
+		case 2:
+			tx_state = 3;
+			break;
+		case 3:
+			tx_state = 4;
+			break;
+		case 4:
+			tx_state = 5;
+			break;
+		case 5:
+			own.sendflag = 0;
+			Enable_RS485(0);
+			tx_state = 0;
+			break;
+		default:
+			tx_state = 0;
+	}
+}
+*/

@@ -1,0 +1,239 @@
+
+/************************************************************
+ * Copyright (c) 2004-2005, POWERCOM Co., All Rights Reserved.
+ * File        :"def.h"
+ * Description :
+
+ * Author      : Xu Hailun
+ * Date        : 2003-08-24
+ * Version     : 1.0
+ *
+ * Revisions   :
+ * 20050616, by ly
+ * Ö»°üÀ¨6W/12W/16W/ÉÏÐÐ¹¦·Å
+ ************************************************************/
+#include "defines.h"
+
+/*############################ start ##########################*/
+#define uchar   unsigned char
+#define uint    unsigned int
+#define sint    signed int
+#define ushort  unsigned short
+#define ulong   unsigned long
+#define slong   signed long
+#define schar   signed char
+
+#define __MODULE_DPA__
+////------------------for message process-----------------
+#define STXB					0x48
+#define EOIB					0x4d
+#define SYNCB					0x4E
+//#define MSG_SYNC				0x5C
+#define MAX_RVBLEN			    180
+#define MAX_SDBLEN			    180
+#define MAX_MSGLEN				80
+#define MAX_TEMP				80
+/*--------------- constant declared for system. ----------------*/
+
+#define UP_MODULE_ID0         'U'          //ÉÏÐÐÄ£¿éID
+#define UP_MODULE_ID1         'P'  
+#define UP_MODULE_ADDRE       5            //ÉÏÐÐÄ£¿éµØÖ·
+#define DN_MODULE_ID0         'D'          //ÏÂÐÐÄ£¿éID
+#define DN_MODULE_ID1         'P'  
+#define DN_MODULE_ADDRE       6            //ÏÂÐÐÄ£¿éµØÖ·
+
+//#define PA_I_ALM_D2			PIND2
+//#define PA_OVER_C3			PINC3
+
+//#define ON			1
+//#define OFF			0
+
+#define   chkbit(var,bit)  		(var & (0x01 << bit))
+#define   setbit(var,bit)    	(var |= (0x01 << bit))
+#define   clrbit(var,bit)    	(var &= (~(0x01 << bit)))
+
+
+
+#define WAIT1M					30
+#define WAIT1S					10
+
+#define IDLE                	    0xee
+#define IDLEW                	    0xeeee
+
+#define RESTART 	            	0x52//Rstart
+#define	RESET_PARA  	            0x49//Initialize
+#define REBOOT	 	           	 	0x42//Boot
+#define	ENTER_TEST  	            0x54//Test
+#define	UPDATE_FLASH    	    	0x55//Update
+
+
+/*²¹³¥±í³¤¶È*/
+#define MAX_TEMPTABLEN			27
+#define MAX_FREQTABLEN			4
+
+//EEprom map
+#define __BACKUP_AREA0__		0x004
+#define __BACKUP_AREA1__		0x100
+//#define __BACKUP_AREA2__		0x100
+
+#define EE_ADDR_OWN			  	0x00//72
+#define EE_ADDR_MY				0x100//25
+#define EE_ADDR_ITTAB			0x200//90
+#define EE_ADDR_TEMPTAB			0x300//120
+#define EE_ADDR_FREQTAB			0x400//120
+#define EE_ADDR_CALIBRATION  0x500    //Ð£×¼Öµdbm+Ð£×¼Öµmv+Ð£×¼Öµk+Ð£×¼Öµb £¨´æ´¢¸ñÊ½£©    Êä³ö¹¦ÂÊ
+#define EE_ADDR_CALIBRATION_RO  0x540    //Ð£×¼Öµdbm+Ð£×¼Öµmv+Ð£×¼Öµk+Ð£×¼Öµb £¨´æ´¢¸ñÊ½£© ·´Ïò¹¦ÂÊ
+#define EE_ADDR_CALIBRATION_PI  0x580    //Ð£×¼Öµdbm+Ð£×¼Öµmv+Ð£×¼Öµk+Ð£×¼Öµb £¨´æ´¢¸ñÊ½£© ÊäÈë¹¦ÂÊ
+
+#define MAX_ADC_WAIT		    1000
+#define MAX_SAMPLING		    6
+#define MAX_ADCCH		    	  8
+
+/*
+struct Time_Stru{
+	uint year;
+	uchar month;
+	uchar day;
+	uchar hour;
+	uchar minute;
+	uchar second;
+	uchar week;
+};
+*/
+
+struct ADC_Para_Stru{
+	uint result;
+};
+
+struct module_addr{//EEPROM:0-15 //15
+     uchar mname[10];
+     uchar id[30];//Ä£¿éIDºÅ
+     uchar addr;//Ä£¿éµØÖ·
+     uchar pver;//Ð­Òé°æ±¾ºÅ
+     uchar hver[10];//³ÌÐòID
+     uchar sver[2];//Èí¼þ°æ±¾
+     uchar serial[20];  
+     sint  OffsetAdc[8];
+     uint  thrMinCurrent;//µçÁ÷¼ì²âµÄ×îÐ¡¸æ¾¯ÃÅÏÞ
+     uint  thrMaxCurrent;//µçÁ÷¼ì²âµÄ×î´ó¸æ¾¯ÃÅÏÞ
+     
+     //ÒÔÉÏ±£´æÔÚEEPROM
+};
+
+struct PA_Para_Stru{//EEPROM :´Ó16--  ¹²21×Ö½Ú
+         uchar upsw0,upsw1,rfswmode;//¿ª¹Ø
+	uchar sw0,sw1,sw2,rfswchan;//¿ª¹Ø
+	uchar lna_atten[4],dp_atten[4];//Ë¥¼õ,20050622 Ôö¼ÓÒ»¸ö¹Ì¶¨Ë¥¼õ:atten[1]
+	schar  po_maxref1,po_maxref2,po_maxref3,po_maxref4;
+	//sint  maxpo1_ctr_3g,maxpo2_ctr_3g,maxpo3_ctr_3g,maxpo4_ctr_3g;
+	uint voltage[8];
+	schar  maxpo1_ctr,maxpo2_ctr,maxpo3_ctr,maxpo4_ctr;
+	////ÒÔÉÏÁ¿Òª±£´æeeprom;
+	sint po1,po2,po3,po4;//Êä³ö¹¦ÂÊ
+	schar po1_2g,po2_2g,po3_2g,po4_2g;//Êä³ö¹¦ÂÊ
+
+
+
+	schar temp;//ÎÂ¶È¼ì²â Ó²¼þÎ´ÉèÖÃ£¬ÖÃÎª30¶È¹
+	uint current;//µçÁ÷
+	
+	uchar alarm_state,alarm_state_po1,alarm_state_po2,alarm_state_po3,alarm_state_po4; 
+
+	uint vopo1,vopo2,vopo3,vopo4;//Êä³ö¹¦ÂÊµÄµçÑ¹Öµ
+	uint vocurrent;//µçÁ÷µÄµçÑ¹¼ì²âÖµ
+	uint votemp;//ÎÂ¶ÈµÄµçÑ¹¼ì²â
+	uchar realstatus;
+	uchar currentstatus;
+	uchar state;
+
+
+	uint wait,wait1,wait2,wait3,wait4;
+
+	//ÆäËü±êÖ¾
+};
+
+struct Msg_Struct{
+	uchar stx;
+	uchar ver;
+	uchar m_add;
+	uchar comm;
+	uchar flag;
+	uchar param_add[2];
+	uchar len;
+	uchar data_info[40];
+	uchar chk[2];
+	uchar eoi;
+};
+
+enum{
+	MT_INIT=0,
+	MT_LEN,
+	MT_TYPE,
+	MT_RVMSG,
+	MT_RVVER
+};
+
+///==========for ADC ===================
+#define VREF				5 //current refrence voltage.
+
+enum{
+	DAC_A=0,
+	DAC_B,
+	DAC_C,
+	DAC_D,
+	DAC_E,
+	DAC_F,
+	DAC_G,
+	DAC_H,
+	DAC_CTRL0,
+	DAC_CTRL1,
+	DAC_PRESET,
+	DAC_RESERVED,
+	DAC_A_B,
+	DAC_C_D,
+	DAC_E_F,
+	DAC_G_H
+};
+
+//ÖÇÄÜ»¯±í¸ñ
+struct ITab_Struct{
+	schar TTab[30];//ÎÂ¶È·Ö¶Î
+	sint  CTab[10];//ÐÅµÀ·Ö¶Î
+};
+
+struct ParaListStruct{
+	uint Para;
+	uchar Len;
+	uchar Arith;
+};
+
+union buf_union
+{
+	uint buf1;
+	uchar buf2[2];
+};
+
+struct Calibration_Struct{
+//Êä³ö
+	schar value1[4];
+	uint  voltage1[4];
+	schar value2[4];
+	uint  voltage2[4];
+	sint  power_k[4];
+	sint  power_b[4];
+////·´Ïò
+//	schar value1_ro[3];
+//        uint  voltage1_ro[3];
+//	schar value2_ro[3];
+//	uint  voltage2_ro[3];
+///	sint  power_k_ro[3];
+//	sint  power_b_ro[3];
+////ÊäÈë
+//	char value1_pi[2];
+//	uint  voltage1_pi[2];
+//	char value2_pi[2];
+//	uint  voltage2_pi[2];
+//	int  power_k_pi[2];
+//	int  power_b_pi[2];		
+};
+

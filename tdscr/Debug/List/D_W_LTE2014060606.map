@@ -1,0 +1,2229 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.53O/WIN                                         #
+#                                                                              #
+#           Link time     =  24/Apr/2019  09:49:31                             #
+#           Target CPU    =  A90                                               #
+#           List file     =  D:\Personal\Desktop\接入模块\tdscr\Debug\List\D_W #
+#                            _LTE2014060606.map                                #
+#           Output file 1 =  D:\Personal\Desktop\接入模块\tdscr\Debug\Exe\D_W_ #
+#                            LTE2014060606.hex                                 #
+#                            Format: intel-extended                            #
+#           Command line  =  D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\ADC. #
+#                            r90                                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\Atme #
+#                            ga32.r90                                          #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\crc. #
+#                            r90                                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\fpa. #
+#                            r90                                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\IIC. #
+#                            r90                                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\IT_p #
+#                            roc.r90                                           #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\msg. #
+#                            r90                                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Obj\USAR #
+#                            T.r90                                             #
+#                            I:\研发软件\编程\IAR\Ew23（old）\avr\lib\cl3s-ec- #
+#                            sf.r90                                            #
+#                            -o                                                #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\Exe\D_W_ #
+#                            LTE2014060606.hex                                 #
+#                            -Fintel-extended -l                               #
+#                            D:\Personal\Desktop\接入模块\tdscr\Debug\List\D_W #
+#                            _LTE2014060606.map                                #
+#                            -xms                                              #
+#                            -II:\研发软件\编程\IAR\Ew23（old）\avr\LIB\ -f    #
+#                            I:\研发软件\编程\IAR\Ew23（old）\avr\src\template #
+#                            \cfgm32.xcl                                       #
+#                            (-D_..X_INTVEC_SIZE=58 -D_..X_FLASH_NEND=7FFF     #
+#                            -D_..X_FLASH_END=7FFF -D_..X_SRAM_BASE=60         #
+#                            -D_..X_SRAM_TEND=FF -D_..X_SRAM_END=85F           #
+#                            -D_..X_EXT_SRAM_BASE=_..X_SRAM_BASE               #
+#                            -D_..X_EXT_SRAM_END=_..X_SRAM_BASE                #
+#                            -D_..X_EXT_CSTACK_BASE=_..X_SRAM_BASE             #
+#                            -D_..X_EXT_CSTACK_END=_..X_SRAM_BASE              #
+#                            -D_..X_EXT_RSTACK_BASE=_..X_SRAM_BASE             #
+#                            -D_..X_EXT_RSTACK_END=_..X_SRAM_BASE              #
+#                            -D_..X_EXT_ROM_BASE=_..X_SRAM_BASE                #
+#                            -D_..X_EXT_ROM_END=_..X_SRAM_BASE                 #
+#                            -D_..X_EXT_NV_BASE=_..X_SRAM_BASE                 #
+#                            -D_..X_EXT_NV_END=_..X_SRAM_BASE                  #
+#                            -D_..X_EEPROM_END=3FF) -D_..X_HEAP_SIZE=10        #
+#                            -D_..X_CSTACK_SIZE=20 -D_..X_RSTACK_SIZE=20       #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_medium_read=_formatted_read -f                 #
+#                            I:\研发软件\编程\IAR\Ew23（old）\avr\src\template #
+#                            \cfg3s.xcl                                        #
+#                            (-ca90 -w29                                       #
+#                            -Z(CODE)INTVEC=0-(_..X_INTVEC_SIZE-1)             #
+#                            -Z(CODE)TINY_F=_..X_FLASH_BASE-FF                 #
+#                            -Z(CODE)NEAR_F=_..X_FLASH_BASE-_..X_FLASH_NEND    #
+#                            -Z(CODE)SWITCH=_..X_FLASH_BASE-_..X_FLASH_NEND    #
+#                            -Z(CODE)DIFUNCT=_..X_FLASH_BASE-_..X_FLASH_NEND   #
+#                            -Z(CODE)CODE=_..X_FLASH_BASE-_..X_FLASH_END       #
+#                            -Z(CODE)FAR_F=[_..X_FLASH_BASE-_..X_FLASH_END]/10 #
+#                            000                                               #
+#                            -Z(CODE)INITTAB=[_..X_FLASH_BASE-_..X_FLASH_END]/ #
+#                            10000                                             #
+#                            -Z(CODE)HUGE_F=_..X_FLASH_BASE-_..X_FLASH_END     #
+#                            -Z(CODE)TINY_ID=_..X_FLASH_BASE-_..X_FLASH_END    #
+#                            -Z(CODE)NEAR_ID=_..X_FLASH_BASE-_..X_FLASH_END    #
+#                            -Z(CODE)CHECKSUM=_..X_FLASH_BASE-_..X_FLASH_END   #
+#                            -Z(DATA)TINY_I,TINY_Z,TINY_N=_..X_SRAM_BASE-_..X_ #
+#                            SRAM_TEND                                         #
+#                            -Z(DATA)CSTACK+_..X_CSTACK_SIZE=_..X_SRAM_BASE-_. #
+#                            .X_SRAM_END,_..X_EXT_CSTACK_BASE-_..X_EXT_CSTACK_ #
+#                            END                                               #
+#                            -Z(DATA)HEAP+_..X_HEAP_SIZE=_..X_SRAM_BASE-_..X_S #
+#                            RAM_END,_..X_EXT_SRAM_BASE-_..X_EXT_SRAM_END      #
+#                            -Z(DATA)RSTACK+_..X_RSTACK_SIZE=_..X_SRAM_BASE-_. #
+#                            .X_SRAM_END,_..X_EXT_RSTACK_BASE-_..X_EXT_RSTACK_ #
+#                            END                                               #
+#                            -Z(DATA)NEAR_I,NEAR_Z=_..X_SRAM_BASE-_..X_SRAM_EN #
+#                            D,_..X_EXT_SRAM_BASE-_..X_EXT_SRAM_END            #
+#                            -Z(DATA)NEAR_C=_..X_EXT_ROM_BASE-_..X_EXT_ROM_END #
+#                            -Z(DATA)NEAR_N=_..X_EXT_NV_BASE-_..X_EXT_NV_END   #
+#                            -Z(XDATA)EEPROM_I,EEPROM_N=1-_..X_EEPROM_END)     #
+#                            -D_..X_FLASH_BASE=_..X_INTVEC_SIZE -H1895         #
+#                            -h(CODE)0-(_..X_INTVEC_SIZE-1)                    #
+#                                                                              #
+#                        Copyright 1987-2002 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+                  There are no program entries.
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  R10             = REG
+  R11             = REG
+  R12             = REG
+  R13             = REG
+  R14             = REG
+  R15             = REG
+  R4              = REG
+  R5              = REG
+  R6              = REG
+  R7              = REG
+  R8              = REG
+  R9              = REG
+  __64bit_doubles = disabled
+  __cpu           = 3
+  __cpu_name      = AT90Mega32
+  __enhanced_core = enabled
+  __has_elpm      = false
+  __memory_model  = 2
+  __rt_version    = 2.30
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _..X_FLASH_BASE         00000058 
+           _..X_RSTACK_SIZE        00000020 
+           _..X_CSTACK_SIZE        00000020 
+           _..X_HEAP_SIZE          00000010 
+           _..X_EEPROM_END         000003FF 
+           _..X_EXT_NV_END         00000060 
+           _..X_EXT_NV_BASE        00000060 
+           _..X_EXT_ROM_END        00000060 
+           _..X_EXT_ROM_BASE       00000060 
+           _..X_EXT_RSTACK_END     00000060 
+           _..X_EXT_RSTACK_BASE    00000060 
+           _..X_EXT_CSTACK_END     00000060 
+           _..X_EXT_CSTACK_BASE    00000060 
+           _..X_EXT_SRAM_END       00000060 
+           _..X_EXT_SRAM_BASE      00000060 
+           _..X_SRAM_END           0000085F 
+           _..X_SRAM_TEND          000000FF 
+           _..X_SRAM_BASE          00000060 
+           _..X_FLASH_END          00007FFF 
+           _..X_FLASH_NEND         00007FFF 
+           _..X_INTVEC_SIZE        00000058 
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\ADC.r90
+  LIBRARY MODULE, NAME : ADC
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000024 - 00000025 (2 bytes), align: 0
+  Segment part 1. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADC                  00000024 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000026 - 00000026 (1 bytes), align: 0
+  Segment part 2. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADCSRA               00000026 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000027 - 00000027 (1 bytes), align: 0
+  Segment part 3. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADMUX                00000027 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000028 - 00000028 (1 bytes), align: 0
+  Segment part 4. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ACSR                 00000028 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000AE - 000000AE (1 bytes), align: 0
+  Segment part 13.            Intra module refs:   Read_ADC
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adc_flag                000000AE 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000034C - 00000369 (1e bytes), align: 1
+  Segment part 16.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Init_ADC                0000034C        Atmega8_Init (Atmega32)
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000036A - 000003AF (46 bytes), align: 1
+  Segment part 17.            Intra module refs:   ADC_Control
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Read_ADC                0000036A 
+               non_banked function
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 00000058 - 0000005E (7 bytes), align: 0
+  Segment part 15.            Intra module refs:   ADC_Control
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           lp                      00000058 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000003B0 - 00000499 (ea bytes), align: 1
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC_Control             000003B0        main (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000049A - 000004E1 (48 bytes), align: 1
+  Segment part 19.            Intra module refs:   Preset_DAC
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_DAC_Model        0000049A 
+               non_banked function
+               stack 1 = 00000000 ( 00000006 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000004E2 - 00000569 (88 bytes), align: 1
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Update_DAC              000004E2        Auto_ProtectPA (fpa)
+                                                   BiasCompensate_Proc (fpa)
+                                                   System_Init (Atmega32)
+               non_banked function
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000056A - 0000057F (16 bytes), align: 1
+  Segment part 21.            Intra module refs:   DAC_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Preset_DAC              0000056A 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000580 - 00000589 (a bytes), align: 1
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DAC_Init                00000580        Atmega8_Init (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000058A - 000005D5 (4c bytes), align: 1
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PA_PowerOn              0000058A        System_Init (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\Atmega32.r90
+  LIBRARY MODULE, NAME : Atmega32
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000031 - 00000031 (1 bytes), align: 0
+  Segment part 1. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRD                 00000031 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000032 - 00000032 (1 bytes), align: 0
+  Segment part 2. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTD                00000032 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000034 - 00000034 (1 bytes), align: 0
+  Segment part 3. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRC                 00000034 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000035 - 00000035 (1 bytes), align: 0
+  Segment part 4. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTC                00000035 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000037 - 00000037 (1 bytes), align: 0
+  Segment part 5. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRB                 00000037 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000038 - 00000038 (1 bytes), align: 0
+  Segment part 6. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTB                00000038 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000003A - 0000003A (1 bytes), align: 0
+  Segment part 7. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRA                 0000003A 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000003B - 0000003B (1 bytes), align: 0
+  Segment part 8. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTA                0000003B 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000041 - 00000041 (1 bytes), align: 0
+  Segment part 9. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_WDTCR                00000041 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000052 - 00000052 (1 bytes), align: 0
+  Segment part 10. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCNT0                00000052 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000053 - 00000053 (1 bytes), align: 0
+  Segment part 11. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR0                00000053 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000055 - 00000055 (1 bytes), align: 0
+  Segment part 12. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_MCUCR                00000055 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000059 - 00000059 (1 bytes), align: 0
+  Segment part 13. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TIMSK                00000059 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000AF - 000000AF (1 bytes), align: 0
+  Segment part 21.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           temp1                   000000AF        VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B0 - 000000B0 (1 bytes), align: 0
+  Segment part 23.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ctri                    000000B0        ADC_Control (ADC)
+                                                   Init_Load (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B1 - 000000B1 (1 bytes), align: 0
+  Segment part 24.            Intra module refs:   timer0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           fast_flag               000000B1 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B2 - 000000B2 (1 bytes), align: 0
+  Segment part 25.            Intra module refs:   main
+                                                   timer0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           slow_flag               000000B2        Init_Load (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B3 - 000000B3 (1 bytes), align: 0
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sum_paras               000000B3        Init_Load (fpa)
+                                                   Query_Paralist_Proc (msg)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B4 - 000000B4 (1 bytes), align: 0
+  Segment part 27.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           reset_f                 000000B4        Init_Load (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B5 - 000000B6 (2 bytes), align: 0
+  Segment part 29.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           eewp                    000000B5 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B7 - 000000B8 (2 bytes), align: 0
+  Segment part 30.            Intra module refs:   System_Init
+                                                   main
+                                                   timer0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           led_flag                000000B7 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000000B9 - 00000116 (5e bytes), align: 0
+  Segment part 31.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           own                     000000B9        Init_Load (fpa)
+                                                   Msg_Proc (msg)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+                                                   get_msg (msg)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000117 - 0000016A (54 bytes), align: 0
+  Segment part 32.            Intra module refs:   System_Init
+                                                   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           my                      00000117        Auto_ProtectPA (fpa)
+                                                   BiasCompensate_Proc (fpa)
+                                                   Init_Load (fpa)
+                                                   My_Temp (fpa)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   PA_PowerOn (ADC)
+                                                   Set_DW_Dcs_Attenuation (fpa)
+                                                   Set_DW_W_Attenuation (fpa)
+                                                   Set_Up_Dcs_Attenuation (fpa)
+                                                   Set_Up_W_Attenuation (fpa)
+                                                   VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000016B - 0000017A (10 bytes), align: 0
+  Segment part 33.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adct                    0000016B        ADC_Control (ADC)
+                                                   Get_Voltage (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000017B - 000001A2 (28 bytes), align: 0
+  Segment part 34.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           amplifier               0000017B        IT_Msg_Proc (IT_proc)
+                                                   Init_Load (fpa)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001A3 - 000001CA (28 bytes), align: 0
+  Segment part 35.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           amplifier_ro            000001A3        Init_Load (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001CB - 000001F2 (28 bytes), align: 0
+  Segment part 36.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           amplifier_pi            000001CB        Init_Load (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001F3 - 000002A6 (b4 bytes), align: 0
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rvb                     000001F3        IT_Msg_Proc (IT_proc)
+                                                   Msg_Proc (msg)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   Query_Paralist_Proc (msg)
+                                                   get_msg (msg)
+                                                   s_command (msg)
+                                                   uart_rxc_isr (USART)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000002A7 - 0000035A (b4 bytes), align: 0
+  Segment part 38.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sdb                     000002A7        IT_Msg_Proc (IT_proc)
+                                                   Init_Load (fpa)
+                                                   LOAD_EEPROM (IIC)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   Send_Msg_Loop (msg)
+                                                   UPDATE_EEPROM (IIC)
+                                                   VoltageConvertTo (fpa)
+                                                   s_command (msg)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000035B - 0000035B (1 bytes), align: 0
+  Segment part 39.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rbr                     0000035B        USART_Init (USART)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000035C - 0000035C (1 bytes), align: 0
+  Segment part 40.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rbw                     0000035C        IT_Msg_Proc (IT_proc)
+                                                   Msg_Proc (msg)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   Query_Paralist_Proc (msg)
+                                                   USART_Init (USART)
+                                                   get_msg (msg)
+                                                   s_command (msg)
+                                                   uart_rxc_isr (USART)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000035D - 0000035D (1 bytes), align: 0
+  Segment part 41.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sbr                     0000035D        Send_Msg_Loop (msg)
+                                                   s_command (msg)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000035E - 0000035E (1 bytes), align: 0
+  Segment part 42.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sbw                     0000035E        Send_Msg_Loop (msg)
+                                                   s_command (msg)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000035F - 0000035F (1 bytes), align: 0
+  Segment part 43.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adc_mux                 0000035F        Init_ADC (ADC)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000360 - 00000361 (2 bytes), align: 0
+  Segment part 44.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adc_rel                 00000360        ADC_Control (ADC)
+                                                   Read_ADC (ADC)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000362 - 00000362 (1 bytes), align: 0
+  Segment part 51.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           cmp_flag                00000362        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000363 - 00000394 (32 bytes), align: 0
+  Segment part 52.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ITab                    00000363        IT_Msg_Proc (IT_proc)
+                                                   Init_Load (fpa)
+                                                   My_Temp (fpa)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000005D6 - 00000603 (2e bytes), align: 1
+  Segment part 55.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           delayx                  000005D6        BiasCompensate_Proc (fpa)
+                                                   IT_Msg_Proc (IT_proc)
+                                                   Init_Load (fpa)
+                                                   Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   PA_PowerOn (ADC)
+                                                   Send_Msg_Loop (msg)
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000604 - 0000060D (a bytes), align: 1
+  Segment part 56.            Intra module refs:   Atmega8_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           WDT_off                 00000604 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000060E - 00000619 (c bytes), align: 1
+  Segment part 57.            Intra module refs:   Atmega8_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           WDT_Init                0000060E 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000061A - 00000627 (e bytes), align: 1
+  Segment part 58.            Intra module refs:   Atmega8_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Timer0_Init             0000061A 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000628 - 00000665 (3e bytes), align: 1
+  Segment part 59.            Intra module refs:   System_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Atmega8_Init            00000628 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000666 - 000006C9 (64 bytes), align: 1
+  Segment part 60.            Intra module refs:   Segment part 18
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           timer0_isr              00000666 
+               interrupt, non_banked function
+               stack 1 = 00000000 ( 00000005 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000006CA - 00000713 (4a bytes), align: 1
+  Segment part 61.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           System_Init             000006CA 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000714 - 000007C1 (ae bytes), align: 1
+  Segment part 62.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    00000714        ?cstartup_call_main (?C_STARTUP)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000001C, align: 0
+  Segment part 14. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EECR                 0000001C 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000001D, align: 0
+  Segment part 15. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEDR                 0000001D 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000001E, align: 0
+  Segment part 16. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEARL                0000001E 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000001F, align: 0
+  Segment part 17. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEARH                0000001F 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 0000002F (30 bytes), align: 1
+  Segment part 18. ROOT.
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: CODE 00004844 - 00004849 (6 bytes), align: 0
+  Segment part 22.            Intra module refs:   CalibrationWrite (IT_proc)
+                                                   FreqTabBuf (IT_proc)
+                                                   FreqTabParaCount (IT_proc)
+                                                   ITab
+                                                   TempTabBuf (IT_proc)
+                                                   TempTabParaCount (IT_proc)
+                                                   adc_flag (ADC)
+                                                   adc_mux
+                                                   adc_rel
+                                                   adct
+                                                   amplifier
+                                                   amplifier_pi
+                                                   amplifier_ro
+                                                   cmp_flag
+                                                   cpacks (msg)
+                                                   ctri
+                                                   cur_temp (fpa)
+                                                   eewp
+                                                   fast_flag
+                                                   led_flag
+                                                   my
+                                                   old_temp (fpa)
+                                                   own
+                                                   rbr
+                                                   rbw
+                                                   reset_f
+                                                   rev_count (USART)
+                                                   rvb
+                                                   rx_state (USART)
+                                                   sbr
+                                                   sbw
+                                                   sdb
+                                                   slow_flag
+                                                   sum_paras
+                                                   temp1
+                                                   uiRtn_ch (USART)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?<Segment init: NEAR_Z>
+                                   00004844 
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\crc.r90
+  LIBRARY MODULE, NAME : crc
+
+  SEGMENTS IN THE MODULE
+  ======================
+NEAR_F
+  Relative segment, address: CODE 0000005F - 0000007E (20 bytes), align: 0
+  Segment part 7.             Intra module refs:   crc_fun
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           h_num_table             0000005F 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 0000007F - 0000009E (20 bytes), align: 0
+  Segment part 8.             Intra module refs:   crc_fun
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           l_num_table             0000007F 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000007C2 - 0000082F (6e bytes), align: 1
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           crc_fun                 000007C2        LOAD_EEPROM (IIC)
+                                                   UPDATE_EEPROM (IIC)
+                                                   get_msg (msg)
+                                                   s_command (msg)
+               non_banked function
+               stack 1 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\fpa.r90
+  LIBRARY MODULE, NAME : fpa
+
+  SEGMENTS IN THE MODULE
+  ======================
+NEAR_I
+  Relative segment, address: DATA 000000A0 - 000000AD (e bytes), align: 0
+  Segment part 15.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VerName                 000000A0 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000395 - 00000395 (1 bytes), align: 0
+  Segment part 17.            Intra module refs:   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           cur_temp                00000395 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000396 - 00000396 (1 bytes), align: 0
+  Segment part 19.            Intra module refs:   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           old_temp                00000396 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000830 - 00000881 (52 bytes), align: 1
+  Segment part 28.            Intra module refs:   BiasCompensate_Proc
+                                                   Set_DW_Dcs_Attenuation
+                                                   Set_DW_W_Attenuation
+                                                   Set_Up_Dcs_Attenuation
+                                                   Set_Up_W_Attenuation
+                                                   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           My_Temp                 00000830 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000882 - 00000921 (a0 bytes), align: 1
+  Segment part 29.            Intra module refs:   BiasCompensate_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_DW_W_Attenuation    00000882        PA_MSG_Proc (msg)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000922 - 000009C1 (a0 bytes), align: 1
+  Segment part 30.            Intra module refs:   BiasCompensate_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_DW_Dcs_Attenuation
+                                   00000922        PA_MSG_Proc (msg)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000009C2 - 00000A59 (98 bytes), align: 1
+  Segment part 31.            Intra module refs:   BiasCompensate_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_Up_W_Attenuation    000009C2        PA_MSG_Proc (msg)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000A5A - 00000AF9 (a0 bytes), align: 1
+  Segment part 32.            Intra module refs:   BiasCompensate_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Set_Up_Dcs_Attenuation
+                                   00000A5A 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000AFA - 00000C91 (198 bytes), align: 1
+  Segment part 33.            Intra module refs:   Auto_ProtectPA
+                                                   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           BiasCompensate_Proc     00000AFA        PA_PowerOn (ADC)
+                                                   main (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 0000000E )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000C92 - 00000CAB (1a bytes), align: 1
+  Segment part 34.            Intra module refs:   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Get_Voltage             00000C92 
+               non_banked function
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000CAC - 0000102B (380 bytes), align: 1
+  Segment part 35.            Intra module refs:   Segment part 38
+                                                   VoltageConvertTo
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Auto_ProtectPA          00000CAC 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000008 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000102C - 00001945 (91a bytes), align: 1
+  Segment part 36.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           VoltageConvertTo        0000102C        ADC_Control (ADC)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 0000000A )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 0000009F - 000000AE (10 bytes), align: 0
+  Segment part 21.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           org_voltage             0000009F 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 000000AF - 000000C9 (1b bytes), align: 0
+  Segment part 22.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           org_temp                000000AF 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 000000CA - 000000E4 (1b bytes), align: 0
+  Segment part 23.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           volt_comp1              000000CA 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 000000E5 - 000000FF (1b bytes), align: 0
+  Segment part 24.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           volt_comp2              000000E5 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 00000100 - 0000011A (1b bytes), align: 0
+  Segment part 25.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           volt_comp3              00000100 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 0000011B - 00000135 (1b bytes), align: 0
+  Segment part 26.            Intra module refs:   Init_Load
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           volt_comp4              0000011B 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001946 - 00001ED3 (58e bytes), align: 1
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Init_Load               00001946        Atmega8_Init (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: CODE 0000484A - 0000484F (6 bytes), align: 0
+  Segment part 14.            Intra module refs:   VerName
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?<Segment init: NEAR_I>
+                                   0000484A 
+    -------------------------------------------------------------------------
+NEAR_ID
+  Relative segment, address: CODE 00004850 - 0000485D (e bytes), align: 0
+  Segment part 16.            Intra module refs:   VerName
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address: CODE 00000232 - 00000257 (26 bytes), align: 1
+  Segment part 38.            Intra module refs:   Auto_ProtectPA
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\IIC.r90
+  LIBRARY MODULE, NAME : IIC
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000033 - 00000033 (1 bytes), align: 0
+  Segment part 1. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PINC                 00000033 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001ED4 - 00001EDF (c bytes), align: 1
+  Segment part 11.            Intra module refs:   IIC_ACK
+                                                   IIC_GET
+                                                   IIC_SEND
+                                                   IIC_STAR
+                                                   IIC_STOP
+                                                   RROM
+                                                   WROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _NOP                    00001ED4 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001EE0 - 00001EEB (c bytes), align: 1
+  Segment part 12.            Intra module refs:   IIC_ACK
+                                                   IIC_SEND
+                                                   IIC_STAR
+                                                   IIC_STOP
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sda                     00001EE0 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001EEC - 00001EF7 (c bytes), align: 1
+  Segment part 13.            Intra module refs:   IIC_ACK
+                                                   IIC_GET
+                                                   IIC_SEND
+                                                   IIC_STAR
+                                                   IIC_STOP
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           scl                     00001EEC 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001EF8 - 00001F0F (18 bytes), align: 1
+  Segment part 14.            Intra module refs:   RROM
+                                                   WROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IIC_STAR                00001EF8 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001F10 - 00001F2B (1c bytes), align: 1
+  Segment part 15.            Intra module refs:   RROM
+                                                   WROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IIC_STOP                00001F10 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001F2C - 00001F5F (34 bytes), align: 1
+  Segment part 16.            Intra module refs:   RROM
+                                                   WROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IIC_SEND                00001F2C 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001F60 - 00001F91 (32 bytes), align: 1
+  Segment part 17.            Intra module refs:   RROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IIC_GET                 00001F60 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001F92 - 00001FBB (2a bytes), align: 1
+  Segment part 18.            Intra module refs:   RROM
+                                                   WROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IIC_ACK                 00001F92 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FBC - 00001FF5 (3a bytes), align: 1
+  Segment part 19.            Intra module refs:   LOAD_EEPROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RROM                    00001FBC 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000003 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FF6 - 00002057 (62 bytes), align: 1
+  Segment part 20.            Intra module refs:   UPDATE_EEPROM
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           WROM                    00001FF6 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002058 - 000020D5 (7e bytes), align: 1
+  Segment part 21.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LOAD_EEPROM             00002058        Init_Load (fpa)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000020D6 - 00002147 (72 bytes), align: 1
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           UPDATE_EEPROM           000020D6        IT_Msg_Proc (IT_proc)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\IT_proc.r90
+  LIBRARY MODULE, NAME : IT_proc
+
+  SEGMENTS IN THE MODULE
+  ======================
+NEAR_Z
+  Relative segment, address: DATA 00000397 - 0000045E (c8 bytes), align: 0
+  Segment part 7.             Intra module refs:   IT_Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TempTabBuf              00000397        Init_Load (fpa)
+                                                   Set_DW_Dcs_Attenuation (fpa)
+                                                   Set_DW_W_Attenuation (fpa)
+                                                   Set_Up_Dcs_Attenuation (fpa)
+                                                   Set_Up_W_Attenuation (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000045F - 0000045F (1 bytes), align: 0
+  Segment part 9.             Intra module refs:   IT_Msg_Proc
+                                                   Init_IT_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TempTabParaCount        0000045F        BiasCompensate_Proc (fpa)
+                                                   Set_DW_Dcs_Attenuation (fpa)
+                                                   Set_DW_W_Attenuation (fpa)
+                                                   Set_Up_Dcs_Attenuation (fpa)
+                                                   Set_Up_W_Attenuation (fpa)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000460 - 00000469 (a bytes), align: 0
+  Segment part 10.            Intra module refs:   IT_Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FreqTabBuf              00000460 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000046A - 0000046A (1 bytes), align: 0
+  Segment part 11.            Intra module refs:   IT_Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FreqTabParaCount        0000046A 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000046B - 0000046E (4 bytes), align: 0
+  Segment part 12.            Intra module refs:   IT_Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CalibrationWrite        0000046B        VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 00000136 - 0000013F (a bytes), align: 0
+  Segment part 16.            Intra module refs:   IT_Msg_Proc
+                                                   Init_IT_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TempITabParaAddrD       00000136 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 00000140 - 00000141 (2 bytes), align: 0
+  Segment part 18.            Intra module refs:   IT_Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           FreqITabParaAddrD       00000140 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002148 - 0000217F (38 bytes), align: 1
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Init_IT_Proc            00002148        Init_Load (fpa)
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002180 - 00002A11 (892 bytes), align: 1
+  Segment part 20.            Intra module refs:   Segment part 21
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IT_Msg_Proc             00002180        Msg_Proc (msg)
+               non_banked function
+               calls direct and indirect
+               stack 1 = 00000000 ( 0000000E )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address: CODE 00000258 - 00000279 (22 bytes), align: 1
+  Segment part 21.            Intra module refs:   IT_Msg_Proc
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\msg.r90
+  LIBRARY MODULE, NAME : msg
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000002B - 0000002B (1 bytes), align: 0
+  Segment part 1. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSRA                0000002B 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000002C - 0000002C (1 bytes), align: 0
+  Segment part 2. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UDR                  0000002C 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 00000142 - 00000231 (f0 bytes), align: 0
+  Segment part 14.            Intra module refs:   Query_Paralist_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ParaList_TABD           00000142        Init_Load (fpa)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002A12 - 00002A6B (5a bytes), align: 1
+  Segment part 18.            Intra module refs:   s_command
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Send_Msg_Loop           00002A12 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002A6C - 00002C29 (1be bytes), align: 1
+  Segment part 19.            Intra module refs:   OWN_Msg_Proc
+                                                   PA_MSG_Proc
+                                                   Query_Paralist_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           s_command               00002A6C        IT_Msg_Proc (IT_proc)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002C2A - 00002CEF (c6 bytes), align: 1
+  Segment part 20.            Intra module refs:   Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           get_msg                 00002C2A 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002CF0 - 000031F5 (506 bytes), align: 1
+  Segment part 21.            Intra module refs:   Msg_Proc
+                                                   Segment part 25
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           OWN_Msg_Proc            00002CF0 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000031F6 - 0000421F (102a bytes), align: 1
+  Segment part 22.            Intra module refs:   Msg_Proc
+                                                   Segment part 26
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PA_MSG_Proc             000031F6 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000010 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000046F - 0000046F (1 bytes), align: 0
+  Segment part 15.            Intra module refs:   Query_Paralist_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           cpacks                  0000046F 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004220 - 00004345 (126 bytes), align: 1
+  Segment part 23.            Intra module refs:   Msg_Proc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Query_Paralist_Proc     00004220 
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004346 - 000043ED (a8 bytes), align: 1
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Msg_Proc                00004346        main (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address: CODE 0000027A - 000002B9 (40 bytes), align: 1
+  Segment part 25.            Intra module refs:   OWN_Msg_Proc
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address: CODE 000002BA - 0000034B (92 bytes), align: 1
+  Segment part 26.            Intra module refs:   PA_MSG_Proc
+
+    *************************************************************************
+
+  FILE NAME : D:\Personal\Desktop\^^,^鋇*\tdscr\Debug\Obj\USART.r90
+  LIBRARY MODULE, NAME : USART
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000029 - 00000029 (1 bytes), align: 0
+  Segment part 1. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UBRRL                00000029 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 0000002A - 0000002A (1 bytes), align: 0
+  Segment part 2. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSRB                0000002A 
+    -------------------------------------------------------------------------
+ABSOLUTE (ABS)
+  Relative segment, address: DATA 00000040 - 00000040 (1 bytes), align: 0
+  Segment part 6. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UBRRH                00000040 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000470 - 00000470 (1 bytes), align: 0
+  Segment part 14.            Intra module refs:   USART_Init
+                                                   uart_rxc_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rx_state                00000470        Msg_Proc (msg)
+                                                   get_msg (msg)
+                                                   timer0_isr (Atmega32)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000471 - 00000471 (1 bytes), align: 0
+  Segment part 16.            Intra module refs:   USART_Init
+                                                   uart_rxc_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rev_count               00000471        timer0_isr (Atmega32)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000472 - 00000473 (2 bytes), align: 0
+  Segment part 17.            Intra module refs:   USART_Init
+                                                   uart_rxc_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           uiRtn_ch                00000472 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000043EE - 000043F9 (c bytes), align: 1
+  Segment part 19.            Intra module refs:   USART_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Enable_RS485            000043EE        Send_Msg_Loop (msg)
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000043FA - 00004435 (3c bytes), align: 1
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           USART_Init              000043FA        Atmega8_Init (Atmega32)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004436 - 00004549 (114 bytes), align: 1
+  Segment part 22.            Intra module refs:   Segment part 11
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           uart_rxc_isr            00004436 
+               interrupt, non_banked function
+               stack 1 = 00000000 ( 00000009 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000037 (38 bytes), align: 1
+  Segment part 11. ROOT.
+
+    *************************************************************************
+
+  FILE NAME : I:\^^鉤.^?\^!^\IAR\Ew23^閛ld^闬avr\lib\cl3s-ec-sf.r90
+  PROGRAM MODULE, NAME : ?RESET
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Common segment, address: CODE 00000000 - 00000003 (4 bytes), align: 1
+  Segment part 0. ROOT.
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?C_STARTUP
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000454A, align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?C_STARTUP              0000454A        Segment part 0 (?RESET)
+           __RESTART               0000454A 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000454A - 00004555 (c bytes), align: 1
+  Segment part 4.             Intra module refs:   ?C_STARTUP
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004556 - 00004559 (4 bytes), align: 1
+  Segment part 6.             Intra module refs:   Segment part 4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?call_low_level_init    00004556 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000455A - 00004561 (8 bytes), align: 1
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?need_segment_init      0000455A        ?<Segment init: NEAR_I> (fpa)
+                                                   ?<Segment init: NEAR_Z> (Atmega32)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004562 - 0000456D (c bytes), align: 1
+  Segment part 8.             Intra module refs:   ?call_low_level_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cstartup_call_main     00004562 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?UC_DIVMOD_L01
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000456E - 00004589 (1c bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?UC_DIVMOD_L01          0000456E        Query_Paralist_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?S_MUL_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000458A - 000045A9 (20 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?S_MUL_L02              0000458A        Auto_ProtectPA (fpa)
+                                                   Get_Voltage (fpa)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?US_DIVMOD_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000045AA - 000045D3 (2a bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?US_DIVMOD_L02          000045AA        ?SS_DIVMOD_L02 (?SS_DIVMOD_L02)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?SS_DIVMOD_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000045D4 - 00004603 (30 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?SS_DIVMOD_L02          000045DC        VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?L_NEG_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00004604 - 00004613 (10 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_NEG_L03              00004604        ?SL_DIVMOD_L03 (?SL_DIVMOD_L03)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?L_NEG_Q_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00004614 - 00004623 (10 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_NEG_Q_L03            00004614        ?SL_DIVMOD_L03 (?SL_DIVMOD_L03)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?L_MUL_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00004624 - 0000465B (38 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_MUL_L03              00004624        PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?UL_DIVMOD_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000465C - 000046A7 (4c bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?UL_DIVMOD_L03          0000465C        ?SL_DIVMOD_L03 (?SL_DIVMOD_L03)
+                                                   Update_DAC (ADC)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?SL_DIVMOD_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000046A8 - 000046D3 (2c bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?SL_DIVMOD_L03          000046A8        PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?xV_SWITCH_L06
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000046D4 - 00004799 (c6 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?CV_SWITCH_L06          000046F4        Auto_ProtectPA (fpa)
+           ?SV_SWITCH_L06          000046FC        IT_Msg_Proc (IT_proc)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+           ?LV_SWITCH_L06          00004708 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?PROLOGUE_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000479A - 0000479B (2 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE16_L09         0000479A        PA_MSG_Proc (msg)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000479C - 0000479D (2 bytes), align: 1
+  Segment part 1.             Intra module refs:   ?PROLOGUE16_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE15_L09         0000479C 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000479E - 0000479F (2 bytes), align: 1
+  Segment part 2.             Intra module refs:   ?PROLOGUE15_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE14_L09         0000479E        IT_Msg_Proc (IT_proc)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047A0 - 000047A1 (2 bytes), align: 1
+  Segment part 3.             Intra module refs:   ?PROLOGUE14_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE13_L09         000047A0 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047A2 - 000047A3 (2 bytes), align: 1
+  Segment part 4.             Intra module refs:   ?PROLOGUE13_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE12_L09         000047A2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047A4 - 000047A5 (2 bytes), align: 1
+  Segment part 5.             Intra module refs:   ?PROLOGUE12_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE11_L09         000047A4 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047A6 - 000047A7 (2 bytes), align: 1
+  Segment part 6.             Intra module refs:   ?PROLOGUE11_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE10_L09         000047A6 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047A8 - 000047A9 (2 bytes), align: 1
+  Segment part 7.             Intra module refs:   ?PROLOGUE10_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE9_L09          000047A8 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047AA - 000047AB (2 bytes), align: 1
+  Segment part 8.             Intra module refs:   ?PROLOGUE9_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE8_L09          000047AA        Auto_ProtectPA (fpa)
+                                                   VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047AC - 000047AD (2 bytes), align: 1
+  Segment part 9.             Intra module refs:   ?PROLOGUE8_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE7_L09          000047AC 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047AE - 000047AF (2 bytes), align: 1
+  Segment part 10.            Intra module refs:   ?PROLOGUE7_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE6_L09          000047AE        BiasCompensate_Proc (fpa)
+                                                   LOAD_EEPROM (IIC)
+                                                   OWN_Msg_Proc (msg)
+                                                   UPDATE_EEPROM (IIC)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047B0 - 000047B1 (2 bytes), align: 1
+  Segment part 11.            Intra module refs:   ?PROLOGUE6_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE5_L09          000047B0 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047B2 - 000047B3 (2 bytes), align: 1
+  Segment part 12.            Intra module refs:   ?PROLOGUE5_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE4_L09          000047B2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047B4 - 000047B5 (2 bytes), align: 1
+  Segment part 13.            Intra module refs:   ?PROLOGUE4_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE3_L09          000047B4 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047B6 - 000047B7 (2 bytes), align: 1
+  Segment part 14.            Intra module refs:   ?PROLOGUE3_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE2_L09          000047B6 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047B8 - 000047B9 (2 bytes), align: 1
+  Segment part 15.            Intra module refs:   ?PROLOGUE2_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE1_L09          000047B8 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047BA - 000047BB (2 bytes), align: 1
+  Segment part 16.            Intra module refs:   ?PROLOGUE1_L09
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?EPILOGUE_B_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047BC - 000047BD (2 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B16_L09       000047BC        PA_MSG_Proc (msg)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047BE - 000047BF (2 bytes), align: 1
+  Segment part 1.             Intra module refs:   ?EPILOGUE_B16_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B15_L09       000047BE 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047C0 - 000047C1 (2 bytes), align: 1
+  Segment part 2.             Intra module refs:   ?EPILOGUE_B15_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B14_L09       000047C0        IT_Msg_Proc (IT_proc)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047C2 - 000047C3 (2 bytes), align: 1
+  Segment part 3.             Intra module refs:   ?EPILOGUE_B14_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B13_L09       000047C2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047C4 - 000047C5 (2 bytes), align: 1
+  Segment part 4.             Intra module refs:   ?EPILOGUE_B13_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B12_L09       000047C4 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047C6 - 000047C7 (2 bytes), align: 1
+  Segment part 5.             Intra module refs:   ?EPILOGUE_B12_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B11_L09       000047C6 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047C8 - 000047C9 (2 bytes), align: 1
+  Segment part 6.             Intra module refs:   ?EPILOGUE_B11_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B10_L09       000047C8 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047CA - 000047CB (2 bytes), align: 1
+  Segment part 7.             Intra module refs:   ?EPILOGUE_B10_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B9_L09        000047CA 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047CC - 000047CD (2 bytes), align: 1
+  Segment part 8.             Intra module refs:   ?EPILOGUE_B9_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B8_L09        000047CC        Auto_ProtectPA (fpa)
+                                                   VoltageConvertTo (fpa)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047CE - 000047CF (2 bytes), align: 1
+  Segment part 9.             Intra module refs:   ?EPILOGUE_B8_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B7_L09        000047CE 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047D0 - 000047D1 (2 bytes), align: 1
+  Segment part 10.            Intra module refs:   ?EPILOGUE_B7_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B6_L09        000047D0        BiasCompensate_Proc (fpa)
+                                                   LOAD_EEPROM (IIC)
+                                                   OWN_Msg_Proc (msg)
+                                                   UPDATE_EEPROM (IIC)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047D2 - 000047D3 (2 bytes), align: 1
+  Segment part 11.            Intra module refs:   ?EPILOGUE_B6_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B5_L09        000047D2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047D4 - 000047D5 (2 bytes), align: 1
+  Segment part 12.            Intra module refs:   ?EPILOGUE_B5_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B4_L09        000047D4 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047D6 - 000047D7 (2 bytes), align: 1
+  Segment part 13.            Intra module refs:   ?EPILOGUE_B4_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B3_L09        000047D6 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047D8 - 000047D9 (2 bytes), align: 1
+  Segment part 14.            Intra module refs:   ?EPILOGUE_B3_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B2_L09        000047D8 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047DA - 000047DB (2 bytes), align: 1
+  Segment part 15.            Intra module refs:   ?EPILOGUE_B2_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B1_L09        000047DA 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000047DC - 000047E9 (e bytes), align: 1
+  Segment part 16.            Intra module refs:   ?EPILOGUE_B1_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B0_L09        000047DC 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR4_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R4_is_cg_reg
+                                   000047EA        Auto_ProtectPA (fpa)
+                                                   BiasCompensate_Proc (fpa)
+                                                   IT_Msg_Proc (IT_proc)
+                                                   LOAD_EEPROM (IIC)
+                                                   OWN_Msg_Proc (msg)
+                                                   PA_MSG_Proc (msg)
+                                                   UPDATE_EEPROM (IIC)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR5_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R5_is_cg_reg
+                                   000047EA        Auto_ProtectPA (fpa)
+                                                   BiasCompensate_Proc (fpa)
+                                                   IT_Msg_Proc (IT_proc)
+                                                   LOAD_EEPROM (IIC)
+                                                   OWN_Msg_Proc (msg)
+                                                   UPDATE_EEPROM (IIC)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR6_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R6_is_cg_reg
+                                   000047EA        Auto_ProtectPA (fpa)
+                                                   IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR7_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R7_is_cg_reg
+                                   000047EA        Auto_ProtectPA (fpa)
+                                                   IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+                                                   VoltageConvertTo (fpa)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR8_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R8_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR9_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R9_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR10_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R10_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR11_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R11_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR12_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R12_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR13_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R13_is_cg_reg
+                                   000047EA        IT_Msg_Proc (IT_proc)
+                                                   PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR14_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R14_is_cg_reg
+                                   000047EA        PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR15_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R15_is_cg_reg
+                                   000047EA        PA_MSG_Proc (msg)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : low_level_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EA - 000047ED (4 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        000047EA        ?call_low_level_init (?C_STARTUP)
+               non_banked function
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?segment_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000047EE - 00004801 (14 bytes), align: 1
+  Segment part 8.             Intra module refs:   __flashcpy
+                                                   __segment_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __memclr                000047EE 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00004802 - 00004809 (8 bytes), align: 1
+  Segment part 9.             Intra module refs:   __segment_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __flashcpy              00004802 
+               non_banked function
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000480A - 0000483D (34 bytes), align: 1
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __segment_init          0000480A        ?need_segment_init (?C_STARTUP)
+               non_banked function
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: CODE 00004850, align: 0
+  Segment part 6.             Intra module refs:   __segment_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?<Segment part INITTAB>
+                                   00004850 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000483E - 00004843 (6 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  00004840 
+           ?C_EXIT                 00004840 
+           ?C_FUNCALL              0000483E 
+           _exit                   0000483E        ?cstartup_call_main (?C_STARTUP)
+           exit                    0000483E        ?cstartup_call_main (?C_STARTUP)
+
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?FILLER_BYTES
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Common segment, address: CODE 00000000 - 00000037 (38 bytes), align: 0
+  Segment part 1.
+    -------------------------------------------------------------------------
+?FILL1
+  Relative segment, address: CODE 00000038 - 00000057 (20 bytes), align: 0
+  Segment part 0.
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE   START ADDRESS    END ADDRESS      SIZE  TYPE  ALIGN
+=======              =====   =============    ===========      ====  ====  =====
+INTVEC               CODE         00000000 - 00000037            38   com    1
+?FILL1               CODE         00000038 - 00000057            20   rel    0
+NEAR_F               CODE         00000058 - 00000231           1DA   rel    0
+SWITCH               CODE         00000232 - 0000034B           11A   rel    1
+CODE                 CODE         0000034C - 00004843          44F8   rel    1
+INITTAB              CODE         00004844 - 0000484F             C   rel    0
+NEAR_ID              CODE         00004850 - 0000485D             E   rel    0
+ABSOLUTE (ABS)       DATA              0000001C                       rel    0
+                     DATA              0000001D                     
+                     DATA              0000001E                     
+                     DATA              0000001F                     
+                     DATA         00000024 - 00000025             2 
+                     DATA         00000026 - 00000026             1 
+                     DATA         00000027 - 00000027             1 
+                     DATA         00000028 - 00000028             1 
+                     DATA         00000029 - 00000029             1 
+                     DATA         0000002A - 0000002A             1 
+                     DATA         0000002B - 0000002B             1 
+                     DATA         0000002C - 0000002C             1 
+                     DATA         00000031 - 00000031             1 
+                     DATA         00000032 - 00000032             1 
+                     DATA         00000033 - 00000033             1 
+                     DATA         00000034 - 00000034             1 
+                     DATA         00000035 - 00000035             1 
+                     DATA         00000037 - 00000037             1 
+                     DATA         00000038 - 00000038             1 
+                     DATA         0000003A - 0000003A             1 
+                     DATA         0000003B - 0000003B             1 
+                     DATA         00000040 - 00000040             1 
+                     DATA         00000041 - 00000041             1 
+                     DATA         00000052 - 00000052             1 
+                     DATA         00000053 - 00000053             1 
+                     DATA         00000055 - 00000055             1 
+                     DATA         00000059 - 00000059             1 
+CSTACK               DATA         00000060 - 0000007F            20   dse    0
+RSTACK               DATA         00000080 - 0000009F            20   dse    0
+NEAR_I               DATA         000000A0 - 000000AD             E   rel    0
+NEAR_Z               DATA         000000AE - 00000473           3C6   rel    0
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 18 494 bytes of CODE memory (32 range fill)
+  1 068 bytes of DATA memory
+
+Errors: none
+Warnings: none
+
